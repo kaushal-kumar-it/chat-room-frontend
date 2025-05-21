@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (joined && code && !web) {
-      const ws = new WebSocket('ws://localhost:8080');
+      const ws = new WebSocket('wss://chat-room-uzb1.onrender.com/');
 
       ws.onopen = () => {
         ws.send(`{ "type":"join", "payload":{ "roomId":${code} } }`);
